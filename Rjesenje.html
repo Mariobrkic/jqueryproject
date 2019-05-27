@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title>Javascript zadatak - rješenje</title>
+  </head>
+  <body>
+      
+<a href="#" onclick="startApp()"> POKRENI APLIKACIJU</a>
+
+  <script>
+     "use strict"
+
+      class User {
+       
+        constructor(fn, ln,age){
+                  this.firstName = fn;
+                  this.lastName = ln;   
+                  this.age = age;        
+ 
+        }
+           
+           fullName(){ 
+
+               return this.firstName + ' ' + this.lastName;
+
+
+           }
+
+
+      }
+
+
+      function startApp(){
+
+        let usersArray = new Array();  // ili []
+
+        do{
+            let firstName = prompt('Upišite ime osobe: ');
+           let lastName = prompt('Upišite prezime osobe: ');
+           let age = parseInt(prompt('Upišite godine osobe: '));
+
+           let user = new User(firstName,lastName,age);
+           usersArray.push(user); 
+        } while(confirm('Dodati još osoba?'))                                     //uvjet za while
+        
+         
+        
+      let oldestUser = usersArray[0];              //prva osoba - provjera jel najstarija 
+          
+          for(let i = 0; i < usersArray.lenght; i++) {                //usersArray.forEach(function(user,index){
+                                                                                 
+          
+           if(usersArray[i].age > oldestUser.age){
+              oldestUser = usersArray[i];                                          
+
+
+       }                    
+
+    }
+
+    let output = "Upisali ste " + usersArray.length + "korisnika. \n" ;
+        output += oldestUser.fullName() + " je najstariji korisnik. \n";
+        output += "Ima " + oldestUser.age + "godina!";
+
+          alert(output);
+          
+      }
+
+
+    </script>
+  </body>
+</html>
