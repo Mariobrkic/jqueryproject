@@ -22,6 +22,7 @@ let App = function(){
         initPages: function(settings){
              handleLogin(settings);
              handleTime(settings);
+             handleAjax(settings);
         }  
      }
 

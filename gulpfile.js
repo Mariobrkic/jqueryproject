@@ -33,6 +33,7 @@ const
             return gulp.src([
                        'node_modules/jQuery/dist/jquery.js',
                        'node_modules/parsleyjs/dist/parsley.js',
+                       'node_modules/moment/min/moment.min.js',
                        src + 'js/**/*'
                     
           
